@@ -70,3 +70,45 @@ GROUP BY Product_Name
 
 -- Insight:
 -- Certain furniture and technology products generate significant losses for the business.
+
+--7 Regional Profit Analysis
+SELECT 
+    Region,
+    ROUND(SUM(Profit), 2) AS total_profit
+FROM [Superstore_final_dataset]
+GROUP BY Region
+ORDER BY total_profit DESC;
+
+-- Insight:
+-- West region generates the highest profit, while Central region shows the weakest profitability.
+
+-- 8. Customer Sales Ranking
+
+SELECT
+    Customer_Name,
+    ROUND(SUM(Sales), 2) AS total_sales,
+
+    RANK() OVER (
+        ORDER BY SUM(Sales) DESC
+    ) AS customer_rank
+
+FROM [Superstore_final_dataset]
+
+GROUP BY Customer_Name
+
+-- Insight:
+-- Sean Miller is the highest revenue-generating customer in the dataset.
+
+-- 9. Average Profit by Discount
+
+SELECT 
+    Discount,
+    ROUND(AVG(Profit), 2) AS avg_profit
+FROM [Superstore_final_dataset]
+GROUP BY Discount
+ORDER BY Discount;
+
+-- Insight:
+-- Higher discount levels lead to negative average profit, indicating that aggressive discounting reduces profitability.
+
+
