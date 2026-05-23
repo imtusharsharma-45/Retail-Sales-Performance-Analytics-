@@ -4,12 +4,17 @@
 The objective of this project is to analyze Superstore sales data and identify business insights related to sales performance, profitability, customer behavior, regional trends, and discount impact.
 
 ## Tools & Technologies Used
-- Python
-- Pandas
-- NumPy
-- Matplotlib
-- Seaborn
-- VS Code
+Tools & Technologies Used
+
+• Python
+• Pandas
+• NumPy
+• Matplotlib
+• Seaborn
+• SQL
+• Power BI
+• VS Code
+• Git & GitHub
 
 ## Key Insights
 - Technology category has highest sales and profit
