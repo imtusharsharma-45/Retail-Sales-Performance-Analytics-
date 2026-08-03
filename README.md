@@ -206,6 +206,7 @@ The dashboard enables business users to monitor KPIs, analyze customer segments,
 
 ![Retail Sales Performance Analytics Dashboard](Screenshots/Retail%20Sales%20Performance%20Analytics%20Dashboard.png)
 
+
 ---
 
 # 💡 Key Insights
