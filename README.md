@@ -1,118 +1,158 @@
-# Superstore Sales Analysis
-
-## Project Overview
-
-This project presents an end-to-end analysis of **9,994 retail transactions** from the Superstore dataset using **Python, SQL, statistical analysis, and Power BI**.
-
-The objective is to evaluate sales performance, profitability, customer behavior, regional performance, product categories, and the impact of discounting on profit.
-
-An interactive Power BI dashboard was developed to convert the analysis into business-focused KPIs and visual insights.
+# Retail Sales Performance Analytics
 
 ---
 
-## Business Problem
+# 📌 Project Overview
 
-Retail businesses generate revenue across multiple products, customers, regions, and categories, but high sales do not always translate into strong profitability.
+This project presents an end-to-end retail sales analytics solution developed using **Python, SQL Server, and Power BI**.
 
-The objective of this project is to identify the major drivers of sales and profit, uncover underperforming areas, evaluate discount behavior, and provide insights that can support better commercial decisions.
+The analysis was performed on **9,994 retail transaction records** to evaluate sales performance, profitability, customer purchasing behavior, regional performance, and product category trends.
 
-### Business Questions
+The project follows a complete analytics workflow including **data cleaning, exploratory data analysis (EDA), SQL-based business analysis, and interactive dashboard development** to transform raw retail data into actionable business insights.
 
-The analysis focuses on:
+---
 
-- What are the overall sales and profit levels?
-- Which categories generate the highest sales and profit?
+# 🎯 Business Problem
+
+Retail organizations generate thousands of transactions across multiple products, customers, and regions. While increasing sales is important, high revenue does not always translate into high profitability.
+
+The objective of this project is to analyze retail sales performance, identify profitable and underperforming business areas, understand customer purchasing behavior, and provide business insights that support data-driven decision making.
+
+---
+
+# 🔄 Project Workflow
+
+```text
+Raw Retail Dataset
+        │
+        ▼
+Python
+(Data Cleaning & EDA)
+        │
+        ▼
+SQL Server
+(Business Analysis)
+        │
+        ▼
+Power BI Dashboard
+        │
+        ▼
+Business Insights
+        │
+        ▼
+Business Recommendations
+```
+
+---
+
+# ❓ Business Questions
+
+The project answers the following business questions:
+
+- What are the overall sales and profit?
+- Which product categories generate the highest sales?
+- Which categories generate the highest profit?
 - Which regions contribute the most profit?
-- Which customer segments generate the most sales?
 - Who are the highest-value customers?
-- Which products generate significant losses?
-- How does discounting relate to profitability?
-- How do sales change across months?
+- Which products generate losses?
+- How does discount impact profitability?
+- How do sales change across different months?
 
 ---
 
-## Tools & Technologies
+# 🛠 Tools & Technologies
 
 | Technology | Purpose |
-|---|---|
-| Python | Data analysis and exploratory analysis |
-| Pandas | Data manipulation |
-| NumPy | Numerical analysis |
-| Matplotlib | Data visualization |
-| Seaborn | Exploratory visualization |
-| SQL | Business analysis and KPI calculations |
-| Power BI | Interactive dashboard development |
-| VS Code | Development environment |
-| Git & GitHub | Version control and project documentation |
+|------------|----------|
+| Python | Data Cleaning & Exploratory Data Analysis |
+| Pandas | Data Manipulation |
+| NumPy | Numerical Analysis |
+| Matplotlib | Data Visualization |
+| Seaborn | Exploratory Data Analysis |
+| SQL Server | Business Analysis |
+| Power BI | Interactive Dashboard Development |
+| DAX | KPI Calculations |
+| VS Code | Development Environment |
+| Git & GitHub | Version Control |
 
 ---
 
-## Dataset Information
+# 📂 Dataset Information
 
-The dataset contains **9,994 retail transaction records** across **21 columns**.
-
-It includes information related to:
-
-- Orders and shipping
-- Customers and customer segments
-- Geographic locations
-- Product categories and sub-categories
-- Sales
-- Quantity
-- Discounts
-- Profit
+The project uses the **Superstore Sales Dataset** containing retail sales transactions.
 
 ### Dataset Summary
 
 | Metric | Value |
-|---|---:|
+|---------|-------:|
 | Total Records | 9,994 |
 | Total Columns | 21 |
 | Missing Values | 0 |
-| Exact Duplicate Rows | 0 |
-| Total Sales | ~2.30M |
-| Total Profit | ~286.40K |
+| Duplicate Records | 0 |
+| Total Sales | 2.30M |
+| Total Profit | 286.82K |
+
+### Dataset Includes
+
+- Orders
+- Customers
+- Products
+- Categories
+- Sub-Categories
+- Sales
+- Quantity
+- Discount
+- Profit
+- Region
+- State
+- Order Date
 
 ---
 
-## Data Preparation
+# 🧹 Data Preparation
 
-Before analysis, the dataset was reviewed for data quality and analytical readiness.
+The dataset was reviewed and prepared before analysis.
 
-The preparation process included:
+### Data Preparation Steps
 
-- Reviewing dataset dimensions
-- Inspecting column names and data types
-- Checking for missing values
-- Checking for duplicate records
-- Reviewing sales, quantity, discount, and profit fields
-- Preparing date-related fields for time-based analysis
-- Validating categorical fields such as Region, Segment, Category, and Sub-Category
+- Checked dataset dimensions
+- Reviewed column names and data types
+- Verified missing values
+- Checked duplicate records
+- Reviewed Sales, Quantity, Discount, and Profit columns
+- Prepared date fields for time-based analysis
+- Validated categorical variables
 
-The final dataset contains no missing values or exact duplicate rows.
-
----
-
-## Exploratory Data Analysis
-
-EDA was performed to understand sales and profitability patterns across important business dimensions.
-
-The analysis focused on:
-
-- Sales and profit performance
-- Category and sub-category performance
-- Regional profitability
-- Customer sales contribution
-- Customer segment performance
-- Product-level losses
-- Discount behavior
-- Monthly sales patterns
+The final dataset contained **no missing values** and **no duplicate records**, making it suitable for analysis.
 
 ---
 
-## SQL Business Analysis
+# 📊 Exploratory Data Analysis (EDA)
 
-SQL was used to calculate business KPIs and answer important analytical questions.
+Python was used to explore sales patterns, profitability, customer behavior, and regional performance before dashboard development.
+
+### Analysis Performed
+
+- Profit Distribution Analysis
+- Discount vs Profit Analysis
+- Category-wise Sales Analysis
+- Category-wise Profit Analysis
+- Sub-Category Sales Analysis
+- Top Profitable Sub-Categories
+- Loss-Making Sub-Categories
+- Region-wise Sales Analysis
+- Region-wise Profit Analysis
+- Monthly Sales Trend Analysis
+- Top Customers Analysis
+- Correlation Analysis
+
+Multiple business-focused visualizations were created to identify sales trends and profitability drivers.
+
+---
+
+# 🗄 SQL Business Analysis
+
+SQL Server was used to perform business analysis after completing data preparation and exploratory analysis.
 
 ### Analysis Performed
 
@@ -120,205 +160,220 @@ SQL was used to calculate business KPIs and answer important analytical question
 - Total Profit
 - Sales by Category
 - Profit by Category
-- Top Customers by Sales
-- Loss-Making Products
+- Top 10 Customers by Sales
+- Top Loss-Making Products
 - Regional Profit Analysis
 - Customer Sales Ranking
 - Average Profit by Discount
 
-### Example SQL
+The SQL analysis uses:
 
-```sql
--- Total Sales
-SELECT
-    ROUND(SUM(Sales), 2) AS total_sales
-FROM [Superstore_final_dataset];
+- Aggregate Functions
+- GROUP BY
+- ORDER BY
+- Window Functions
 
-
--- Sales by Category
-SELECT
-    Category,
-    ROUND(SUM(Sales), 2) AS total_sales
-FROM [Superstore_final_dataset]
-GROUP BY Category
-ORDER BY total_sales DESC;
-
-
--- Regional Profit Analysis
-SELECT
-    Region,
-    ROUND(SUM(Profit), 2) AS total_profit
-FROM [Superstore_final_dataset]
-GROUP BY Region
-ORDER BY total_profit DESC;
-
-
--- Customer Sales Ranking
-SELECT
-    Customer_Name,
-    ROUND(SUM(Sales), 2) AS total_sales,
-    RANK() OVER (
-        ORDER BY SUM(Sales) DESC
-    ) AS customer_rank
-FROM [Superstore_final_dataset]
-GROUP BY Customer_Name;
-```
-
-The complete SQL analysis is available in the `SQL` directory.
+The complete SQL queries are available in the **SQL** folder.
 
 ---
 
-## Power BI Dashboard
+# 📈 Power BI Dashboard
 
-An interactive Power BI dashboard was developed to provide an executive view of Superstore sales performance.
+An interactive Power BI dashboard was developed to provide a consolidated view of retail sales performance.
+
+The dashboard enables business users to monitor KPIs, analyze customer segments, evaluate category performance, identify profitable regions, and track monthly sales trends.
 
 ### KPI Cards
 
-| KPI | Dashboard Result |
-|---|---:|
+| KPI | Result |
+|------|-------:|
 | Total Sales | 2.30M |
 | Total Profit | 286.82K |
-| Order/Record Count | 9,994 |
+| Total Orders | 9,994 |
 
 ### Dashboard Visualizations
 
-The dashboard includes:
-
-- Sales by Month
-- Profit by Region
-- Sales by Category
-- Sales by Customer Segment
-- Sales by State
-- Region filter
+- Monthly Sales Trend
+- Regional Profit Analysis
+- Category-wise Sales Performance
+- Sales Contribution by Customer Segment
+- Sales Distribution by State
+- Region Filter
 
 ---
 
-## Dashboard Preview
+# 🖥 Dashboard Preview
 
-![Superstore Sales Dashboard](screenshots/powerbi_dashboard.png)
+![Retail Sales Performance Analytics Dashboard](Screenshots/Retail%20Sales%20Performance%20Analytics%20Dashboard.png)
 
 ---
 
-## Key Insights
+# 💡 Key Insights
 
-### Category Performance
+### Technology Category
 
-**Technology** is the highest-sales category, generating approximately **836K** in sales.
+Technology generated the highest sales among all product categories, making it the strongest contributor to overall business revenue.
 
-Technology also generates the highest overall category profit.
-
-Furniture generates substantial sales but considerably lower profit compared with Technology and Office Supplies.
+---
 
 ### Regional Performance
 
-The **West region** generates the highest profit at approximately **108K**, followed by the East region.
+The West region achieved the highest overall profit, while the Central region generated the lowest profit.
 
-The Central region generates the lowest overall regional profit.
+---
 
 ### Customer Segments
 
-The **Consumer segment** generates the highest sales, contributing approximately **1.16M**.
-
-Corporate customers contribute approximately **706K**, while Home Office customers contribute approximately **430K**.
-
-### Discount and Profitability
-
-The analysis indicates that higher discount levels can be associated with weaker average profitability.
-
-Aggressive discounting should therefore be evaluated carefully rather than being used solely to increase sales volume.
-
-### Monthly Sales
-
-Sales fluctuate across the year, with stronger sales visible toward the later months in the dashboard.
-
-Understanding these patterns can support inventory, promotion, and sales planning.
+The Consumer segment contributed the largest share of total sales compared with Corporate and Home Office customers.
 
 ---
 
-## Business Recommendations
+### Discount Analysis
 
-Based on the analysis:
-
-1. **Prioritize profitable categories**  
-   Technology combines strong sales with strong profitability and should remain an important commercial focus.
-
-2. **Investigate Furniture profitability**  
-   Furniture generates substantial sales but relatively weak overall profit, suggesting a need to examine product margins, discounting, and loss-making items.
-
-3. **Review discount strategy**  
-   High discount levels should be evaluated against resulting profit rather than sales alone.
-
-4. **Investigate loss-making products**  
-   Products generating repeated losses should be reviewed for pricing, discount, shipping, or assortment decisions.
-
-5. **Leverage high-value customer segments**  
-   Consumer customers generate the largest sales contribution and represent an important segment for retention and targeted campaigns.
-
-6. **Use regional performance for planning**  
-   Practices contributing to stronger profitability in the West and East regions can be investigated for potential application in weaker regions.
+Higher discount levels were associated with lower average profitability, indicating that aggressive discounting can negatively impact business profit.
 
 ---
 
-## Project Structure
+### Monthly Sales Trend
+
+Sales remained relatively stable throughout the year, with stronger sales performance observed during the later months.
+
+---
+
+# 📋 Business Recommendations
+
+Based on the analysis, the following recommendations are suggested:
+
+1. Continue investing in high-performing categories such as Technology.
+
+2. Review pricing, discount strategies, and product margins for lower-profit categories.
+
+3. Investigate loss-making products to identify pricing or operational improvements.
+
+4. Optimize discount policies to improve overall profitability.
+
+5. Strengthen customer engagement for high-value customer segments.
+
+6. Analyze successful business practices from high-performing regions and apply them to lower-performing regions where appropriate.
+
+---
+
+# ⭐ Project Features
+
+- End-to-End Retail Sales Analytics Project
+- Data Cleaning & Preparation
+- Exploratory Data Analysis (EDA)
+- SQL Business Analysis
+- Interactive Power BI Dashboard
+- KPI Development
+- Customer Analysis
+- Product Performance Analysis
+- Regional Performance Analysis
+- Business Insights & Recommendations
+
+---
+
+# 📁 Project Structure
 
 ```text
-superstore-sales-analysis/
+Retail-Sales-Performance-Analytics/
 │
 ├── Data/
 │   └── Superstore_final_dataset.csv
 │
 ├── Notebooks/
-│   └── Python analysis and EDA
+│   └── EDA.ipynb
 │
 ├── SQL/
-│   └── SQL business analysis
+│   └── sales_analysis.sql
 │
-├── dashboard/
-│   └── Power BI dashboard
+├── Dashboard/
+│   └── Retail Sales Performance Analytics Dashboard.pbix
 │
-├── screenshots/
-│   └── Dashboard screenshot
+├── Reports/
+│   └── Visualizations/
 │
+├── Screenshots/
+│   └── Retail Sales Performance Analytics Dashboard.png
+│
+├── README.md
 ├── requirements.txt
-│
-└── README.md
+└── .gitignore
 ```
 
 ---
 
-## How to Reproduce the Project
+# ▶️ How to Run the Project
 
-1. Clone or download the repository.
-2. Load the Superstore dataset from the `Data` directory.
-3. Install the Python dependencies from `requirements.txt`.
-4. Run the notebook from the `Notebooks` directory.
-5. Execute the business analysis queries from the `SQL` directory.
-6. Open the Power BI file from the `dashboard` directory.
-7. Validate the dashboard KPIs against the source dataset.
+1. Clone this repository.
+
+2. Install the required Python libraries.
+
+```bash
+pip install -r requirements.txt
+```
+
+3. Open the notebook from the **Notebooks** folder.
+
+4. Execute the SQL queries available in the **SQL** folder.
+
+5. Open the Power BI dashboard from the **Dashboard** folder.
+
+6. Explore the dashboard using the Region slicer and interactive visualizations.
 
 ---
 
-## Key Learnings
+# 💼 Skills Demonstrated
 
-This project demonstrates practical experience with:
-
-- Retail sales analytics
-- Data quality validation
+- Python
+- Pandas
+- NumPy
+- Matplotlib
+- Seaborn
+- SQL Server
+- Window Functions
+- Power BI
+- DAX
+- Data Cleaning
 - Exploratory Data Analysis
-- SQL aggregation and business analysis
-- SQL window functions
-- Customer and product analysis
-- Profitability analysis
-- Discount analysis
-- Power BI dashboard development
-- Translating analytical results into business recommendations
+- Retail Sales Analytics
+- Business Intelligence
+- KPI Development
+- Dashboard Development
+- Business Reporting
 
 ---
 
-## Author
+# 📚 Key Learnings
 
-**Tushar Sharma**
+This project demonstrates practical experience in:
 
-Data Analyst | SQL | Python | Power BI | Advanced Excel | AWS | Snowflake
+- Data Cleaning
+- Exploratory Data Analysis
+- Retail Sales Analytics
+- Customer Analysis
+- Product Performance Analysis
+- Profitability Analysis
+- SQL Business Analysis
+- Window Functions
+- Interactive Dashboard Development
+- Business Reporting
+- Data-Driven Decision Making
 
-GitHub: `imtusharsharma-45`
+---
+
+# 👨‍💻 Author
+
+## Tushar Sharma
+
+**Aspiring Data Analyst**
+
+### Technical Skills
+
+Python | SQL Server | Power BI | DAX | Pandas | NumPy | Matplotlib | Seaborn | Git | GitHub
+
+**GitHub:** https://github.com/imtusharsharma-45
+
+---
+
+⭐ If you found this project useful, consider giving it a Star.
